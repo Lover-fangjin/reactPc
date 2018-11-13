@@ -7,7 +7,9 @@
 
 import React ,{Component} from 'react';
 import Home from './compontent/home/component/Home.js';
-import Mine from './compontent/mine/component/Mine.js'
+import Mine from './compontent/mine/component/Mine.js';
+import {provider} from 'react-redux';
+import store from './provider/store'
 import {
     HashRouter as Router,
     Route,
