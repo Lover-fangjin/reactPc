@@ -10,7 +10,7 @@ export const MINE_REQUEST_SUCCESS ='MINE_REQUEST_SUCCESS';  //状态一；成功
 export const MINE_REQUEST_ERROR ='MINE_REQUEST_ERROR';  //状态一；失败状态
 
 // mainData 为成功状态下得数据结构 或进行二次封装得数据结构
-
+// 它为同步的action  属于构造函数 重新封装后台请求过来的数据结构
 let loadMineSuccessAction = (data = [])=>{
     return {
         type:MINE_REQUEST_SUCCESS,
@@ -44,7 +44,7 @@ export const fetchData =()=>{
             if (res && res.code === 10000){
                 console.log("---------------  const fetchData ---------------");
                 console.log(res.data);
-                dispatch(loadMineSuccessAction(res.data))
+                dispatch(loadMineSuccessAction(res.data))  //dispatch发送指令（通过 loadMineSuccessAction封装之后的action） 到reducer 。
             } else {
                 console.log('服务器开小差了！！！！！！！！！！！！！！');
                 dispatch(loadMineErrorAction())
