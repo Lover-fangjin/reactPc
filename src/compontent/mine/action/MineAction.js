@@ -49,6 +49,7 @@ export const fetchData =()=>{
                 console.log('服务器开小差了！！！！！！！！！！！！！！');
                 dispatch(loadMineErrorAction())
             }
+
         })
     }
 

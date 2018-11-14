@@ -65,7 +65,7 @@ export class Mine extends Component{
         )
     }
 }
-//mapStateToProps  将state 映射到当前组件属性props
+//mapStateToProps  将state 映射到当前组件属性props  | 将store中的数据 作为props 绑定到组件上
 //                 在当前组件state发生改变，即reducer处理完之后 该方法会被回调
 const mapStateToProps =(store) =>{
 
@@ -77,6 +77,8 @@ const mapStateToProps =(store) =>{
 };
 //mapDispatchToProps 将dispatch 发送action指令的方法 映射到组件属性props ，
 //                   在方法绑定到props之后 ，用户在当前组件中即可以使用this.props.方法名 进行数据操作 （操作见32行 ）
+
+                    // 将action 作为props 绑定到组建上
 const mapDispatchToProps = dispatch => ({
     mineFetch:() =>{
         // mine数据请求
@@ -88,4 +90,5 @@ const mapDispatchToProps = dispatch => ({
 
 
 export default connect(mapStateToProps,mapDispatchToProps)(Mine); //容器组件
+//connect 是一个高阶函数 用来装饰react组件
 
